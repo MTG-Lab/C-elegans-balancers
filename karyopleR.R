@@ -7,22 +7,22 @@ library("RColorBrewer")
 ####################
 # data coverage
 
-data=read.table("~/Documents/cedar/Tatiana/Strains/strains/CB3475/coverage.tsv", sep="\t", header=1)
+data=read.table("CB3475_files/coverage.tsv", sep="\t", header=1)
 mydata=toGRanges(data)
 
 
 ####################
 # data SNP
 
-snp=read.table("~/Documents/cedar/Tatiana/Strains/strains/CB3475/snp.tsv", sep="\t", header=1)
+snp=read.table("CB3475_files/snp.tsv", sep="\t", header=1)
 mysnp=toGRanges(snp)
 
 
 ####################
 # breakpoints
 
-start=read.table("start.tsv", sep="\t")
-end=read.table("end.tsv", sep="\t")
+start=read.table("CB3475_files/start.tsv", sep="\t")
+end=read.table("CB3475_files/end.tsv", sep="\t")
 
 mystart=toGRanges(start)
 myend=toGRanges(end)
@@ -65,21 +65,21 @@ library("RColorBrewer")
 ####################
 # data coverage
 
-data=read.table("coverage.tsv", sep="\t", header=1)
+data=read.table("RW6002_files/coverage.tsv", sep="\t", header=1)
 mydata=toGRanges(data)
 
 ####################
 # data SNP
 
-snp=read.table("snp.tsv", header=1)
+snp=read.table("RW6002_files/snp.tsv", header=1)
 mysnp=toGRanges(snp)
 
 
 ####################
 # breakpoints
 
-start=read.table("start.tsv", sep="\t")
-end=read.table("end.tsv", sep="\t")
+start=read.table("RW6002_files/start.tsv", sep="\t")
+end=read.table("RW6002_files/end.tsv", sep="\t")
 
 mystart=toGRanges(start)
 myend=toGRanges(end)
@@ -122,56 +122,56 @@ library("RColorBrewer")
 ####################
 # data coverage FX30144
 
-data30133=read.table("FX30133/coverage.tsv", sep="\t", header=1)
+data30133=read.table("CRISPR-Cas9_Strains_files/FX30133/coverage.tsv", sep="\t", header=1)
 mydata30133=toGRanges(data30133)
 
-data30144=read.table("FX30144/coverage.tsv", sep="\t", header=1)
+data30144=read.table("CRISPR-Cas9_Strains_files/FX30144/coverage.tsv", sep="\t", header=1)
 mydata30144=toGRanges(data30144)
 
-data30235=read.table("FX30235/coverage.tsv", sep="\t", header=1)
+data30235=read.table("CRISPR-Cas9_Strains_files/FX30235/coverage.tsv", sep="\t", header=1)
 mydata30235=toGRanges(data30235)
 
-data30237=read.table("FX30237/coverage.tsv", sep="\t", header=1)
+data30237=read.table("CRISPR-Cas9_Strains_files/FX30237/coverage.tsv", sep="\t", header=1)
 mydata30237=toGRanges(data30237)
 
-data30257=read.table("FX30257/coverage.tsv", sep="\t", header=1)
+data30257=read.table("CRISPR-Cas9_Strains_files/FX30257/coverage.tsv", sep="\t", header=1)
 mydata30257=toGRanges(data30257)
 
 ####################
 # breakpoints
 
-start30133=read.table("FX30133/start.tsv", sep="\t")
-end30133=read.table("FX30133/end.tsv", sep="\t")
+start30133=read.table("CRISPR-Cas9_Strains_files/FX30133/start.tsv", sep="\t")
+end30133=read.table("CRISPR-Cas9_Strains_files/FX30133/end.tsv", sep="\t")
 mystart30133=toGRanges(start30133)
 myend30133=toGRanges(end30133)
 
-start30235=read.table("FX30235/start.tsv", sep="\t")
-end30235=read.table("FX30235/end.tsv", sep="\t")
+start30235=read.table("CRISPR-Cas9_Strains_files/FX30235/start.tsv", sep="\t")
+end30235=read.table("CRISPR-Cas9_Strains_files/FX30235/end.tsv", sep="\t")
 mystart30235=toGRanges(start30235)
 myend30235=toGRanges(end30235)
 
-start30144=read.table("FX30144/start.tsv", sep="\t")
-end30144=read.table("FX30144/end.tsv", sep="\t")
+start30144=read.table("CRISPR-Cas9_Strains_files/FX30144/start.tsv", sep="\t")
+end30144=read.table("CRISPR-Cas9_Strains_files/FX30144/end.tsv", sep="\t")
 mystart30144=toGRanges(start30144)
 myend30144=toGRanges(end30144)
 
-start30257=read.table("FX30257/start.tsv", sep="\t")
-end30257=read.table("FX30257/end.tsv", sep="\t")
+start30257=read.table("CRISPR-Cas9_Strains_files/FX30257/start.tsv", sep="\t")
+end30257=read.table("CRISPR-Cas9_Strains_files/FX30257/end.tsv", sep="\t")
 mystart30257=toGRanges(start30257)
 myend30257=toGRanges(end30257)
 
-start30237=read.table("FX30237/start.tsv", sep="\t")
-end30237=read.table("FX30237/end.tsv", sep="\t")
+start30237=read.table("CRISPR-Cas9_Strains_files/FX30237/start.tsv", sep="\t")
+end30237=read.table("CRISPR-Cas9_Strains_files/FX30237/end.tsv", sep="\t")
 mystart30237=toGRanges(start30237)
 myend30237=toGRanges(end30237)
 
-startFX=read.table("FX_start.tsv", sep="\t")
-endFX=read.table("FX_end.tsv", sep="\t")
+startFX=read.table("CRISPR-Cas9_Strains_files/FX_start.tsv", sep="\t")
+endFX=read.table("CRISPR-Cas9_Strains_files/FX_end.tsv", sep="\t")
 mystartFX=toGRanges(startFX)
 myendFX=toGRanges(endFX)
 
-startFX133_237=read.table("FX30133_FX30237_start.tsv", sep="\t")
-endFX133_237=read.table("FX30133_FX30237_end.tsv", sep="\t")
+startFX133_237=read.table("CRISPR-Cas9_Strains_files/FX30133_FX30237_start.tsv", sep="\t")
+endFX133_237=read.table("CRISPR-Cas9_Strains_files/FX30133_FX30237_end.tsv", sep="\t")
 mystartFX133_237=toGRanges(startFX133_237)
 myendFX133_237=toGRanges(endFX133_237)
 
