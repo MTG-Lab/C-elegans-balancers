@@ -2,7 +2,7 @@
 
 Scripts and data for used for figures on the manuscript.
 
-karyoploteR.R: R script to reproduce the Figures 2A, 5B and 5D. 
+karyoploteR.R: R script to reproduce the Figures 2A, 4A and 4E. 
 
 karyoploteR_map.R: R script to reproduce the Figure 1A. Uses the data in mart_export_map.tsv (genes genomic position extarcted from Biomart).
 
