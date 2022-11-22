@@ -1,4 +1,63 @@
 ##########################
+# RM2431
+
+library("karyoploteR")
+library("RColorBrewer")
+
+####################
+# data coverage
+
+data=read.table("RM2431/coverage.tsv", sep="\t", header=1)
+mydata=toGRanges(data)
+
+
+
+####################
+# data SNP
+
+snp=read.table("RM2431/snp.tsv", header=1)
+mysnp=toGRanges(snp)
+
+
+####################
+# breakpoints
+
+start=read.table("RM2431/start.tsv", sep="\t")
+end=read.table("RM2431/end.tsv", sep="\t")
+
+mystart=toGRanges(start)
+myend=toGRanges(end)
+
+####################
+# plot
+
+#------------------------------------
+tiff("RM2431.tiff", width=400, height=200)
+
+kp <- plotKaryotype(genome = "BSgenome.Celegans.UCSC.ce11", plot.type=1, chromosomes=c("chrI", "chrV"))
+kpAddBaseNumbers(kp, tick.dist=5000000, add.units=TRUE, cex=0.5)
+
+at <- autotrack(current.track = 1, total.tracks = 2)
+kpDataBackground(kp, r0=at$r0, r1=at$r1, color = brewer.pal(n=8, name="Pastel2")[5])
+kpAddLabels(kp, labels = "Coverage", r0=at$r0, r1=at$r1, cex=0.8)
+kpAxis(kp, ymin=0, ymax=2, r0=at$r0, r1=at$r1, side=2, cex=0.6)
+kpLines(kp, data = mydata, ymax=2, r0=at$r0, r1=at$r1, col=brewer.pal(n=8, name="Set2")[1])
+
+at <- autotrack(current.track = 2, total.tracks = 2)
+kpDataBackground(kp, r0=at$r0, r1=at$r1, color = brewer.pal(n=8, name="Pastel2")[5])
+kpAddLabels(kp, labels = "SNP", r0=at$r0, r1=at$r1, cex=0.8)
+kpAxis(kp, numticks = 2, tick.pos = c(0.5, 1), labels = c("Het", "Hom"), r0=at$r0, r1=at$r1, side=2, cex=0.6)
+kpPoints(kp, data = mysnp, ymax=2, r0=at$r0, r1=at$r1, cex=0.6, col=brewer.pal(n=8, name="Set2")[1])
+
+kpPlotRegions(kp, mystart, r0=0, r1=0.5, col="#ff8d92")
+kpPlotRegions(kp, myend, r0=0, r1=0.5, col="#8d9aff")
+kpPlotLinks(kp, data=mystart, data2=myend, col="#fac7ffaa", r0=0.5)
+
+dev.off()
+
+
+
+##########################
 # CB3475
 
 library("karyoploteR")
